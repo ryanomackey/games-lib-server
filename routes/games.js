@@ -62,6 +62,7 @@ router.put('/', function(req, res) {
 
 router.delete('/', function(req, res) {
   var game = req.body;
+  console.log(game);
   knex('user_games')
   .where({user_id:req.user.id, game_id:game.game_id, platform_id:game.platform_id})
   .del()
