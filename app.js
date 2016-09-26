@@ -1,9 +1,5 @@
 'use strict';
 
-//knex migrations
-var knex = require('./db/knex');
-knex.migrate.latest();
-
 require('dotenv').config();
 var express = require('express');
 var path = require('path');
