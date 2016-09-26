@@ -16,8 +16,8 @@ passport.deserializeUser(function(obj, done) {
 router.use(passport.initialize());
 
 passport.use(new SteamStrategy({
-    returnURL: 'https://games-lib-dev.us-west-2.elasticbeanstalk.com/steam/return',
-    realm: 'https://games-lib-dev.us-west-2.elasticbeanstalk.com',
+    returnURL: 'https://games-lib-server.herokuapp.com/steam/return',
+    realm: 'https://games-lib-server.herokuapp.com',
     apiKey: process.env.STEAM
   },
   function(identifier, profile, done) {
