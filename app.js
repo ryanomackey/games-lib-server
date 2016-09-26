@@ -1,5 +1,6 @@
 'use strict';
 
+//knex migrations
 var knex = require('./db/knex');
 knex.migrate.latest();
 
