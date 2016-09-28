@@ -28,11 +28,11 @@ passport.use(new SteamStrategy({
 router.get('/', passport.authenticate('steam'));
 
 router.get('/return',
-  passport.authenticate('steam', { failureRedirect: 'https://games-lib.firebaseapp.com' }),
+  passport.authenticate('steam', { failureRedirect: 'https://games-lib.net' }),
   function(req, res) {
     // Successful authentication, redirect home.
     var steamId = req.session.passport.user.id;
-    res.redirect('https://games-lib.firebaseapp.com/#/' + '?steamImport=true&steamId=' + steamId);
+    res.redirect('https://games-lib.net/#/' + '?steamImport=true&steamId=' + steamId);
   });
 
 module.exports = router;
