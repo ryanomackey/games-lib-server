@@ -23,6 +23,8 @@ router.post('/', function(req, res) {
     .then(function(result) {
       if(!result.length) {
         return knex('games').insert({giantbomb_id:game.game_id,name: game.game_name,image_url:game.game_image,deck:game.game_deck,release_date:game.game_release_date});
+      } else {
+        return knex('games').where({giantbomb_id:game.game_id}).update({giantbomb_id:game.game_id,name: game.game_name,image_url:game.game_image,deck:game.game_deck,release_date:game.game_release_date});
       }
     })
     .then(function() {
